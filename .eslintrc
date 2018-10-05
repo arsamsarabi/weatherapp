@@ -1,0 +1,15 @@
+{
+  "extends": "airbnb",
+  "rules": {
+    "react/jsx-filename-extension": "off",
+    "import/no-unresolved": "warn",
+    "import/prefer-default-export": "off",
+    "no-shadow": "off"
+  },
+  "globals": {
+    "process": true,
+    "__dirname": true,
+    "document": true,
+    "window": true
+  }
+}
