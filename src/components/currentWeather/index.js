@@ -31,6 +31,8 @@ const styles = theme => ({
       easing: theme.transitions.easing.sharp,
     }),
   },
+  colorBar: {},
+  colorChecked: {},
   switchBar: {
     borderColor: theme.palette.grey[400],
     backgroundColor: `${lighten(0.5, palette.primary)} !important`,
@@ -63,7 +65,6 @@ class CurrentWeather extends React.Component {
       refetchData,
     } = this.props;
     const { isCentigrade } = this.state;
-    console.log(report)
     const now = moment().tz('Europe/London').format('hh:mm a dddd do MMM');
 
     return (
