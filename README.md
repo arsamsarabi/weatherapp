@@ -5,6 +5,11 @@ A simple single page weather application prototype that displays the current dat
 [Arsam Sarabi](https://www.linkedin.com/in/arsam/) <arsamsarabi@me.com>
 
 ## How to run the project locally
+0. Prerequisites
+* Node js
+* NPM / Yarn
+> To download Node and NPM visit [Node's official website](https://nodejs.org/en/download/)
+
 1. Clone the repository
 ```shell
   git clone https://github.com/arsamsarabi/weatherapp.git
