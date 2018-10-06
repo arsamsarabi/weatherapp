@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment-timezone';
+import { getIconForReport } from 'images/icons';
 import Wrapper from './Wrapper';
 
 class CurrentWeather extends React.Component {
@@ -22,7 +23,7 @@ class CurrentWeather extends React.Component {
             <h2>{now}</h2>
           </div>
           <div className="column-2">
-            img
+            <img src={getIconForReport(report, now)} alt={report.weather[0].description}/>
           </div>
         </header>
         <div className="weatherReport">

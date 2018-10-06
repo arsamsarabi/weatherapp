@@ -14,7 +14,7 @@ const Wrapper = styled.div`
     padding: 12px;
     display: flex;
     .column-1 {
-      width: 80%;
+      width: 90%;
     }
     h1, h2 {
       font-family: ${props => props.theme.fontHeading};
@@ -23,6 +23,11 @@ const Wrapper = styled.div`
     h1 {
       font-size: 2rem;
       margin-bottom: 12px;
+    }
+    .column-2 {
+      img {
+        width: 40px;
+      }
     }
   }
 `;

@@ -4,20 +4,26 @@ import moon from './moon.png';
 import cloud from './cloud.png';
 import rain from './rain.png';
 import snow from './snow.png';
-import sunrise from './sunrise.png';
-import sunset from './sunset.png';
 import thunder from './thunder.png';
-import wind from './wind.png';
 
-const getIconForReport = (report, now) => {
-  let condition;
-  if (report.clouds.all >= 50) {
-    condition = 'cloudy';
+const getIconForReport = (report, localtime) => {
+  const format = 'hh:mm:ss';
+  const isDayTime = moment(localtime, format).isBefore(moment.unix(report.sys.sunset, format));
+  const current = report.weather[0].main;
+
+  if (current && current === 'Rain') {
+    return rain;
   }
-  
-  // switch (condition) {
-    
-  // }
+  if (current && current === 'Snow') {
+    return snow;
+  }
+  if (current && current === 'Clouds') {
+    return cloud;
+  }
+  if (current && current === 'Thunderstorm') {
+    return thunder;
+  }
+  return isDayTime ? sun : moon;
 };
 
 export {
