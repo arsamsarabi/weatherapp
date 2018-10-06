@@ -8,8 +8,10 @@ const Wrapper = styled.div`
   border-radius: 5px;
   box-shadow: ${props => props.theme.boxShadow.small};
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
   header {
-    background-color: ${props => props.theme.black};
+    background-color: ${props => props.theme.primary};
     padding-bottom: 6px;
     padding: 12px;
     display: flex;
@@ -34,6 +36,20 @@ const Wrapper = styled.div`
     }
   }
   main {
+    padding: 20px;
+    & > div {
+      &:not(:first-of-type) {
+        margin-top: 8px;
+      }
+      &:first-of-type {
+        text-transform: capitalize;
+      }
+    }
+  }
+  footer {
+    min-height: 40px;
+    border-top: 1px dotted ${props => props.theme.primary};;
+    margin-top: auto; 
     padding: 12px;
   }
 `;

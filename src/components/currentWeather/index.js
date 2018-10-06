@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import moment from 'moment-timezone';
 import LabelAndValue from 'components/labelAndValue';
 import { getIconForReport } from 'images/icons';
-import Wrapper from './Wrapper';
+import Wrapper from './wrapper';
 
 class CurrentWeather extends React.Component {
   constructor(props) {
@@ -14,7 +14,6 @@ class CurrentWeather extends React.Component {
   render() {
     const { report } = this.props;
     const now = moment().tz('Europe/London').format('hh:mm a dddd do MMM');
-    console.log(report);
 
     return (
       <Wrapper>
@@ -28,7 +27,13 @@ class CurrentWeather extends React.Component {
           </div>
         </header>
         <main>
+          <LabelAndValue label="Condition" value={report.weather[0].description} />
           <LabelAndValue label="Temperature" value={report.main.temp} />
+          <LabelAndValue label="Max Temp" value={report.main.temp_max} />
+          <LabelAndValue label="Min Temp" value={report.main.temp_min} />
+          <LabelAndValue label="Humidity" value={report.main.humidity} />
+          <LabelAndValue label="Clouds" value={`%${report.clouds.all}`} />
+          <LabelAndValue label="Wind speed" value={report.wind.speed} />
         </main>
         <footer>
           {/* {`Data fetched at ${moment.unix(report.dt).format('hh:mm:ss a DD/MM/YY')}`} */}
