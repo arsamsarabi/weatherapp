@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack-dev-server --hot",
-    "build": "webpack -p"
+    "build": "rimraf dist && cross-env NODE_ENV=production webpack -p"
   },
   "keywords": [
     "React",

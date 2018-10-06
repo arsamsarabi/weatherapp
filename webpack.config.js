@@ -45,7 +45,7 @@ const prodCss = [
 const cssConfig = isDev ? devCss : prodCss
 
 const config = {
-  mode: isDev ? 'development' : 'production',
+  mode: process.env.NODE_ENV,
   target: 'web',
   entry: './src/index.js',
   output: {
@@ -60,6 +60,7 @@ const config = {
     stats: 'errors-only',
     port: 8080,
   },
+  stats: 'errors-only',
   resolve: {
     extensions: ['.js', '.css'],
     alias: {
@@ -108,6 +109,10 @@ const config = {
       cache: !isDev,
       hash: !isDev,
     }),
+    new MiniCssExtractPlugin({
+      filename: "styles/[name].css",
+      chunkFilename: "[id].css"
+    })
   ],
 }
 
