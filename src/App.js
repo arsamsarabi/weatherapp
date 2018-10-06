@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { HashRouter, Route, Redirect } from 'react-router-dom';
-import Weather from 'pages/weatherReport';
+import WeatherReport from 'pages/weatherReport';
 import './resources/styles/reset.css';
 import './resources/styles/styles.css';
 
@@ -27,7 +27,7 @@ const App = () => (
   <HashRouter>
     <Wrapper>
       <Route exact path="/" render={() => <Redirect to="/weather" />} />
-      <Route exact path="/weather" component={Weather} />
+      <Route exact path="/weather" component={WeatherReport} />
     </Wrapper>
   </HashRouter>
 );
