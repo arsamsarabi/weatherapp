@@ -24,11 +24,17 @@ const Wrapper = styled.div`
       font-size: 2rem;
       margin-bottom: 12px;
     }
+    h2 {
+      font-size: 0.8rem;
+    }
     .column-2 {
       img {
         width: 40px;
       }
     }
+  }
+  main {
+    padding: 12px;
   }
 `;
 

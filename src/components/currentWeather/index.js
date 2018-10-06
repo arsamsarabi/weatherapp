@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment-timezone';
+import LabelAndValue from 'components/labelAndValue';
 import { getIconForReport } from 'images/icons';
 import Wrapper from './Wrapper';
 
@@ -12,7 +13,7 @@ class CurrentWeather extends React.Component {
 
   render() {
     const { report } = this.props;
-    const now = moment().tz('Europe/London').format('hh:mm dddd do MMM');
+    const now = moment().tz('Europe/London').format('hh:mm a dddd do MMM');
     console.log(report);
 
     return (
@@ -26,9 +27,9 @@ class CurrentWeather extends React.Component {
             <img src={getIconForReport(report, now)} alt={report.weather[0].description}/>
           </div>
         </header>
-        <div className="weatherReport">
-          {`Temperature: ${report.main.temp}`}
-        </div>
+        <main>
+          <LabelAndValue label="Temperature" value={report.main.temp} />
+        </main>
         <footer>
           {/* {`Data fetched at ${moment.unix(report.dt).format('hh:mm:ss a DD/MM/YY')}`} */}
         </footer>
