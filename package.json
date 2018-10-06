@@ -1,7 +1,7 @@
 {
   "name": "arsams-weather-app",
   "version": "0.0.1",
-  "description": "A simple SPA weather application prototype that displays the current date/time and weather information for the city of London",
+  "description": "A simple single page weather application prototype that displays the current date/time and weather information for the city of London",
   "main": "dist/index.js",
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack-dev-server --hot",
