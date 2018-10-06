@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 
 const Wrapper = styled.div`
   background-color: ${props => props.theme.white};
-  width: 280px;
-  height: 380px;
+  width: 270px;
+  height: 350px;
   border-radius: 5px;
   box-shadow: ${props => props.theme.boxShadow.small};
   overflow: hidden;
@@ -48,9 +48,21 @@ const Wrapper = styled.div`
   }
   footer {
     min-height: 40px;
-    border-top: 1px dotted ${props => props.theme.primary};;
     margin-top: auto; 
-    padding: 12px;
+    padding: 12px 0 0 12px;
+    display: flex;
+    justify-content: space-between;
+    .unitControl {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      P {
+        color: ${props => props.theme.primary};
+      }
+    }
+    button {
+      padding: 6px;
+    }
   }
 `;
 

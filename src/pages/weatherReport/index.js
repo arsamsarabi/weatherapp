@@ -10,12 +10,19 @@ import Wrapper from './Wrapper';
 class WeatherReport extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      city: 'london',
+    };
   }
 
   componentWillMount() {
+    this.fetchWeatherReportForCity();
+  }
+
+  fetchWeatherReportForCity = () => {
     const { fetchWeatherReport } = this.props;
-    fetchWeatherReport();
+    const { city } = this.state;
+    fetchWeatherReport(city);
   }
 
   render() {
@@ -24,11 +31,15 @@ class WeatherReport extends Component {
     }
     const {
       report,
+      fetchWeatherReport,
     } = this.props;
 
     return (
       <Wrapper>
-        <CurrentWeather report={report} />
+        <CurrentWeather
+          report={report}
+          refetchData={this.fetchWeatherReportForCity}
+        />
       </Wrapper>
     );
   }
